@@ -15,7 +15,6 @@ def upload_to_dynamodb(NBA_database, csvlines, header):
         response = NBA_database.put_item(Item = item)
     return response
         
-
 def read_s3_csv(bucket,file_key):
     obj = s3.get_object(Bucket=bucket, Key=file_key)
     data = obj['Body'].read().decode('utf-8').splitlines()
